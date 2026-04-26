@@ -8,7 +8,7 @@ var amount = ""
 
 const rate = document.querySelector(".rate");
 
-const apiKey = process.env .API_KEY
+const apiKey = process.env .${{ secrets.API_KEY }}
 
 
 const getRate = async (currency1, currency2, action, amount) => {
