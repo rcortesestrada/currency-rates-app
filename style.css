@@ -1,29 +1,29 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
 
-body{
+body {
     margin: 0px;
 }
 
-main{
+main {
     background-color: rgba(82, 82, 82, 0.701);
     background-size: cover;
     min-height: 100vh;
     padding-top: 0;
 }
 
-.navbar{
+.navbar {
     background-color: rgb(64, 64, 64);
 }
 
-.navbar ul{
+.navbar ul {
     list-style: none;
     display: inline-flex;
 }
 
-.navbar a{
+.navbar a {
     color: white;
     text-decoration: none;
     padding: 15px;
@@ -31,11 +31,11 @@ main{
     text-align: center;
 }
 
-.navbar a:hover{
+.navbar a:hover {
     background-color: rgb(26, 26, 26);
 }
 
-#homepage-image{
+#homepage-image {
     background-image: url(images/homepage.jpg);
     background-size: cover;
     background-position: center;
@@ -43,18 +43,18 @@ main{
     height: 15em;
 }
 
-.middle-navbar{
+.middle-navbar {
     padding-top: 4em;
 }
 
-.middle-navbar ul{
+.middle-navbar ul {
     list-style: none;
     display: flex;
     justify-content: center;
     gap: 2.5em;
 }
 
-.middle-navbar li{
+.middle-navbar li {
     padding: 1.5em;
     border-radius: 50px;
     border: none;
@@ -65,7 +65,7 @@ main{
     font-weight: bold;
 }
 
-.middle-navbar a{
+.middle-navbar a {
     color: white;
     text-decoration: none;
     padding: 30px;
@@ -73,6 +73,22 @@ main{
     text-align: center;
 }
 
-.middle-navbar li:hover{
+.middle-navbar li:hover {
     background-color: rgb(26, 26, 26);
+}
+
+.card {
+    border: 3px solid black;
+    width: 20em;
+    border-radius: 2em;
+    overflow: hidden;
+}
+
+.cat {
+    width: 20em;
+    cursor: pointer;
+}
+
+.rate {
+    padding: 1em;
 }
