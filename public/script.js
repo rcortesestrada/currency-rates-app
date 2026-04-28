@@ -23,13 +23,13 @@ const getRate = async (currency1, currency2, action, amount, date) => {
     var url = "";
 
     if (action === "live") {
-        url = `/live/${typeOfRequest},${base},${symbol}`;
+        url = `https://currencyratesweb.netlify.app/live/${typeOfRequest},${base},${symbol}`;
         console.log("live");
     } else if (action === "convert") {
-        url = `/convert/${typeOfRequest},${base},${symbol},${amountToConvert}`;
+        url = `https://currencyratesweb.netlify.app/convert/${typeOfRequest},${base},${symbol},${amountToConvert}`;
         console.log("convert");
     } else if (action === "historical") {
-        url = `/historical/${typeOfRequest},${base},${symbol},${historicalDateSelected}`;
+        url = `https://currencyratesweb.netlify.app/historical/${typeOfRequest},${base},${symbol},${historicalDateSelected}`;
         console.log("historical");
     } else {
         console.log("Nothing matched");
