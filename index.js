@@ -13,7 +13,7 @@ app.listen(port, () => {
 
 app.use(express.static('public'));
 
-app.get('https://currencyratesweb.netlify.app/live/:requestInfo', async (request, response) => {
+app.get('/live/:requestInfo', async (request, response) => {
     const requestInfo = request.params.requestInfo.split(',');
     console.log(requestInfo);
     
@@ -31,7 +31,7 @@ app.get('https://currencyratesweb.netlify.app/live/:requestInfo', async (request
     console.log(json);
 });
 
-app.get('https://currencyratesweb.netlify.app/convert/:requestInfo', async (request, response) => {
+app.get('/convert/:requestInfo', async (request, response) => {
     const requestInfo = request.params.requestInfo.split(',');
     console.log(requestInfo);
 
@@ -50,7 +50,7 @@ app.get('https://currencyratesweb.netlify.app/convert/:requestInfo', async (requ
     response.json(json);
 });
 
-app.get('https://currencyratesweb.netlify.app/historical/:requestInfo', async (request, response) => {
+app.get('/historical/:requestInfo', async (request, response) => {
     const requestInfo = request.params.requestInfo.split(',');
     console.log(requestInfo);
 
@@ -68,7 +68,7 @@ app.get('https://currencyratesweb.netlify.app/historical/:requestInfo', async (r
     console.log(json);
 });
 
-app.get('https://currencyratesweb.netlify.app/chart/:requestInfo', async (request, response) => {
+app.get('/chart/:requestInfo', async (request, response) => {
 
     const requestInfo = request.params.requestInfo.split(',');
 
