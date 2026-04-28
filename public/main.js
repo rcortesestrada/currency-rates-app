@@ -7,7 +7,13 @@ const ctx = document.getElementById('myChart');
 const createANewChart = (currencyToCompare) => {
   const base = currencyToCompare
 
-  fetch(`https://currencyratesweb.netlify.app/live/chart/${base}`)
+  fetch(`https://currencyratesweb.netlify.app/live/chart/${base}`, {
+    method: 'GET', // or 'POST', 'PUT', etc.
+    headers: {
+    'Accept': 'application/json',
+    'Content-Type': 'application/json',
+  }
+  })
   .then(function(response) {
 
     if (response.ok === true) {
