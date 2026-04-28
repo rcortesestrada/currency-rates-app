@@ -1,22 +1,19 @@
 {
-  "name": "currencyapp-copy",
+  "name": "trial",
   "version": "1.0.0",
-  "description": "Currency App Trial Run Node",
+  "description": "trial to get it published and showing",
   "keywords": [
-    "currency",
-    "rate"
+    "trial"
   ],
   "license": "MIT",
-  "author": "Rodrigo Cortes",
+  "author": "me",
   "type": "commonjs",
-  "main": "script.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "currency-symbol-map": "^5.1.0",
     "dotenv": "^17.4.2",
-    "express": "^5.2.1",
-    "node-fetch": "^3.3.2"
+    "express": "^5.2.1"
   }
 }
