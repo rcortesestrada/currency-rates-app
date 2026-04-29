@@ -80,5 +80,5 @@ app.get('/chart/:requestInfo', async (request, response) => {
     const fetch_response = await fetch(url);
     const json = await fetch_response.json();
     response.json(json);
-    console.log(json)
+    // console.log(json)
 })

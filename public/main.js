@@ -4,42 +4,27 @@ var myChart;
 
 const ctx = document.getElementById('myChart');
 
-const createANewChart = (currencyToCompare) => {
-  const base = currencyToCompare
+const getNewChart = async (currency1) => {
 
-  fetch(`/live/chart/${base}`, {
-    method: 'GET', // or 'POST', 'PUT', etc.
-    headers: {
-    'Accept': 'application/json',
-    'Content-Type': 'application/json',
-  }
-  })
-  .then(function(response) {
+  const base = currency1;
+  let url = `/chart/${base}`;
 
-    if (response.ok === true) {
-      return response.json();
-    }
-  })
-  .then(function(data) {
-    console.log(data);
-    createChart(data, 'bar');
-  })
+  try {
+    const res = await fetch(url);
+    const data = await res.json()
 
-  const createChart = (data, type) => {
+    var usableData = data.quotes;
 
-  var usableData = data.quotes;
+    delete usableData[base + "BTC"];
+    delete usableData[base + "XAU"];
+    delete usableData[base + "XAG"];
 
-  delete usableData[base + "BTC"];
-  delete usableData[base + "XAU"];
-  delete usableData[base + "XAG"];
+    const labels = Object.keys(usableData);
+    const values = Object.values(usableData);
 
-  const labels = Object.keys(usableData);
-  const values = Object.values(usableData);
-
-
-  myChart = new Chart(ctx, {
-    type: type,
-    data: {
+    myChart = new Chart(ctx, {
+      type: "bar",
+      data: {
       labels: labels,
       datasets: [{
         label: 'Currency Pair: 1 ' + base + ' equivalents',
@@ -47,18 +32,22 @@ const createANewChart = (currencyToCompare) => {
         borderWidth: 1
       }]
     },
-    options: {
+      options: {
       responsive: true,
       maintainAspectRatio: false,
       scales: {
-                  myScale: {
-            type: "logarithmic",
-            position: "left",
+        myScale: {
+          type: "logarithmic",
+          position: "left",
           },
-      }
+        }
       }
     });
-  };
+
+    console.log(data);
+  } catch(e) {
+    console.log(e);
+  }
 }
 
 const checkCurrency = () => {
@@ -86,7 +75,7 @@ const reset = () => {
   document.getElementById("searchCurrency1").value = "";
 }
 
-createANewChart("USD");
+getNewChart("USD");
 
 document.querySelector("#compareSelectedCurrency")?.addEventListener("click", function() {
   checkCurrency();
@@ -95,11 +84,10 @@ document.querySelector("#compareSelectedCurrency")?.addEventListener("click", fu
 
   if (currencies.length > 0) {
       myChart.destroy();
-      createANewChart(currencyToCheck);
+      getNewChart(currencyToCheck);
   } else {
     console.log("Please select a currency.");
   }
-
-
+  
   reset();
 });
