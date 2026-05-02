@@ -35,10 +35,10 @@ input, textarea {
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
-    box-sizing: border-box; /* Ensures padding doesn't affect width */
+    box-sizing: border-box;
 }
 
-button {
+.button {
     padding: 10px 20px;
     border: none;
     background-color: #007bff;
@@ -49,13 +49,13 @@ button {
     transition: background-color 0.3s;
 }
 
-button:hover {
+.button:hover {
     background-color: #0056b3;
 }
 
 @media only screen and (max-width: 600px) {
     .container {
         width: 90%;
-        margin: 20px auto;
+        margin: 1em auto;
     }
 }

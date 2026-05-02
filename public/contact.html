@@ -9,6 +9,7 @@
 	<meta charset="utf-8">
 
 	<link rel="stylesheet" href="css/contact.css">
+	<link rel="stylesheet" href="css/style.css">
 	<link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 
 </head>
@@ -26,45 +27,44 @@
 	</nav>
 
 	<main>
+		<div class="container">
+    		<form>
+        		<h2>Contact Me</h2>
 
-		<!-- <div class="form-container">
-			<form id="form-outer-layer">
-				<label for="name" class="form-label">Enter your first name:</label>
-				<input type="text" name="first-name" id="formName" max="20" required class="form-text-input">
-
-				<label for="email" class="form-label">Enter your email:</label>
-				<input type="email" name="email" id="formEmail" required class="form-text-input">
-
-				<label for="comment" class="form-label">Enter your comment:</label>
-			 	<input type="text" name="comment" id="formComment" class="form-text-input">
-
-				<label for="submit-button" class="form-label"></label>
-				<input type="button" value="Submit" name="submit-button">
-			</form>
-		</div> -->
-<div class="container">
-    <form action="#" method="POST">
-        <h2>Contact Us</h2>
+				<br>
+				<h3 id="messageSent"></h3>
+				<br>
         
-        <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" required>
-        </div>
+        		<div class="form-group">
+            		<label for="userName">Name</label>
+            		<input type="text" id="userName" name="userName" required>
+					<p id="userNameMissing" class="missing-text"></p>
+        		</div>
 
-        <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required>
-        </div>
+        		<div class="form-group">
+            		<label for="email">Email</label>
+            		<input type="email" id="email" name="email" required>
+					<p id="userEmailMissing"></p>
+        		</div>
 
-        <div class="form-group">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
-        </div>
+				<div class="form-group">
+            		<label for="subject">Subject</label>
+            		<input type="text" id="subject" name="subject" required>
+					<p id="subjectMissing"></p>
+        		</div>
 
-        <button type="submit">Send Message</button>
-    </form>
-</div>
+        		<div class="form-group">
+            		<label for="message">Message</label>
+            		<textarea id="message" name="message" rows="5" required></textarea>
+					<p id="messageMissing"></p>
+        		</div>
+
+        		<button type="button" class="button" id="sendEmailButton">Send Message</button>
+    		</form>
+		</div>
 	</main>
+
+	<script src="contact.js"></script>
 
 </body>
 

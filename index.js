@@ -1,8 +1,12 @@
 const express = require('express');
 const fetch = require('node-fetch').default;
+const nodemailer = require('nodemailer');
 require('dotenv').config();
 
 const API_KEY = process.env.API_KEY;
+const emailUser = process.env.EMAIL_USER;
+const emailPass = process.env.EMAIL_PASS;
+const receiveEmailAddress = process.env.EMAIL_ADDRESS;
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -12,6 +16,8 @@ app.listen(port, () => {
 });
 
 app.use(express.static('public'));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 app.get('/live/:requestInfo', async (request, response) => {
     const requestInfo = request.params.requestInfo.split(',');
@@ -81,4 +87,43 @@ app.get('/chart/:requestInfo', async (request, response) => {
     const json = await fetch_response.json();
     response.json(json);
     // console.log(json)
+})
+
+app.post('/contact', async (request, response) => {
+
+    let emailInfo = request.body
+
+    const name = emailInfo.name;
+    const email = emailInfo.email;
+    const subject = emailInfo.subject;
+    const message = emailInfo.message;
+
+    console.log(name, email, subject, message);
+
+    // console.log(emailInfo);
+    
+    const sendMail = async () => {
+    const transporter = nodemailer.createTransport({
+        host: 'mxslurp.click',
+        port: 2525,
+        secure: false,
+        auth: {
+            user: emailUser,
+            pass: emailPass,
+        }
+    })
+
+    const info = await transporter.sendMail({
+        from: email,
+        to: receiveEmailAddress,
+        subject: subject,
+        text: `${name} had this to say: ${message}`,
+    })
+
+        console.log('Message sent:' + info.messageId)
+        response.status(201).json({ message: "Data received successfully!" });
+    } 
+
+    sendMail()
+    .catch(e => console.log(e))
 })
