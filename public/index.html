@@ -8,25 +8,46 @@
 	
 	<meta charset="utf-8">
 
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/style.css">
 
 </head>
 
 <body>
 
-	<nav class="navbar">
-		<ul>
-			<li><a href="/index.html">Home</a></li>
-			<li><a href="/rate.html">Check daily rate</a></li>
-			<li><a href="/historical.html">Historical data</a></li>
-			<li><a href="/calculate.html">Convert currency</a></li>
-			<li><a href="/contact.html">Contact</a></li>
-		</ul>
-	</nav>
+	<!-- <div class="topnav">
 
-	<!-- <div class="image-container" id="homepage-image">
+		<a href="/index.html" class="active">Home</a>
 
+		<nav class="navbar">
+			<ul class="myLinks">
+				<li><a href="/rate.html">Check daily rate</a></li>
+				<li><a href="/historical.html">Historical data</a></li>
+				<li><a href="/calculate.html">Convert currency</a></li>
+				<li><a href="/contact.html">Contact</a></li>
+			</ul>
+		</nav>		
+		
+		<a href="javascript:void(0);" class="icon" onclick="myFunction()">
+			<i class="fa fa-bars"></i>
+		</a>
 	</div> -->
+
+	<!-- Top Navigation Menu -->
+	<div class="topnav">
+		<a href="/index.html" class="active">Home</a>
+
+		<div id="myLinks">
+			<a href="/rate.html">Check daily rate</a>
+			<a href="/historical.html">Historical data</a>
+			<a href="/calculate.html">Convert currency</a>
+			<a href="/contact.html">Contact</a>
+		</div>
+
+		<a href="javascript:void(0);" class="icon" onclick="hamMenu()">
+			<i class="fa fa-bars"></i>
+		</a>
+	</div>
 
 	<div class="chart-container">
   		<canvas id="myChart"></canvas>

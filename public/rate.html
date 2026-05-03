@@ -8,6 +8,7 @@
 	
 	<meta charset="utf-8">
 
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/style.css">
 	<script src="https://unpkg.com/currency.js@~2.0.0/dist/currency.min.js"></script>
 
@@ -15,7 +16,7 @@
 
 <body>
 
-	<nav class="navbar">
+	<!-- <nav class="navbar">
 		<ul>
 			<li><a href="/index.html">Home</a></li>
 			<li><a href="/rate.html">Check daily rate</a></li>
@@ -23,7 +24,22 @@
 			<li><a href="/calculate.html">Convert currency</a></li>
 			<li><a href="/contact.html">Contact</a></li>
 		</ul>
-	</nav>
+	</nav> -->
+
+	<div class="topnav">
+		<a href="/index.html" class="active">Home</a>
+
+		<div id="myLinks">
+			<a href="/rate.html">Check daily rate</a>
+			<a href="/historical.html">Historical data</a>
+			<a href="/calculate.html">Convert currency</a>
+			<a href="/contact.html">Contact</a>
+		</div>
+
+		<a href="javascript:void(0);" class="icon" onclick="hamMenu()">
+			<i class="fa fa-bars"></i>
+		</a>
+	</div>	
 
 	<main>
 
