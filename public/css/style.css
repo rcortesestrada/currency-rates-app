@@ -40,6 +40,8 @@ main {
   position: absolute;
   right: 0;
   top: 0;
+  width: 3em;
+  text-align: center;
 }
 
 .topnav a:hover {
